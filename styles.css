@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('assets/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.casino-container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    max-width: 90%;
+}
+
+h1 {
+    font-size: 2em;
+    text-shadow: 2px 2px 5px #ffd700;
+}
+
+.balance {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.reels {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.reel img {
+    width: 80px;
+    height: 80px;
+}
+
+@keyframes spin {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(-100px); }
+    30% { transform: translateY(-300px); }
+    50% { transform: translateY(-500px); }
+    70% { transform: translateY(-700px); }
+    90% { transform: translateY(-900px); }
+    100% { transform: translateY(-1000px); }
+}
+
+.spinning {
+    animation: spin 0.1s linear infinite;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 10px #ffd700; transform: scale(1); }
+    50% { box-shadow: 0 0 20px #ff4444; transform: scale(1.1); }
+    100% { box-shadow: 0 0 10px #ffd700; transform: scale(1); }
+}
+
+.winning {
+    animation: glow 0.5s ease-in-out infinite;
+}
+
+.controls {
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    margin: 0 5px;
+}
+
+button:disabled {
+    background: #888;
+}
+
+#result {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.leaderboard {
+    margin-top: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: #444;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: #ffd700;
+    color: #000;
+}
+
+.leaderboard-content {
+    display: none;
+}
+
+.leaderboard-content.active {
+    display: block;
+}
+
+.leaderboard-content p {
+    margin: 5px 0;
+}
